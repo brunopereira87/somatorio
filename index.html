@@ -23,17 +23,16 @@
     const button = document.querySelector('button');
     const sum = value => {
       let result = 0;
-      console.log(value)
+
       for(i = 1; i < value; i++){
         if( (i % 3 === 0) || (i % 5 === 0 )){
           result+= i;
-        }
-
-        
+        }        
       }
-      return result;
 
+      return result;
     }
+
     button.addEventListener('click', event => {
       event.preventDefault();
 
