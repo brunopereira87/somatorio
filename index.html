@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Somatório</title>
+</head>
+<body>
+  <h2>Somatório</h2>
+  <p>Digite no campo abaixo um número e obtenha o somatório de todos os número divisíveis por 3 ou 5 que
+    são menores que o valor digitado
+  </p>
+  <form>
+    <label for="number">Número</label>
+    <input type="number" name="number" id="number">
+    <button type="submit">Calcular somatório</button>
+  </form>
+  <h4>
+    Resultado: 
+    <span id="result"></span>
+  </h4>
+  <script>
+    const button = document.querySelector('button');
+    const sum = value => {
+      let result = 0;
+      console.log(value)
+      for(i = 1; i < value; i++){
+        if( (i % 3 === 0) || (i % 5 === 0 )){
+          result+= i;
+        }
+
+        
+      }
+      return result;
+
+    }
+    button.addEventListener('click', event => {
+      event.preventDefault();
+
+      const value = +document.querySelector('#number').value;
+      const sumResult = sum(value);
+      document.querySelector('#result').innerText = sumResult;
+    });
+
+
+  </script>
+</body>
+</html>
